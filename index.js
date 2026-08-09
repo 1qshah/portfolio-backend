@@ -6,12 +6,6 @@ const Project = require('./models/Project')
 const app = express()
 app.use(express.static('dist'))
 
-app.get('/', (request, response) => {
-  Project.find({}).then(projects => {
-    response.json(projects)
-  })
-})
-
 app.get('/api/projects', (request, response) => {
   Project.find({}).then(projects => {
     response.json(projects)
