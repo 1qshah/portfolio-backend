@@ -4,6 +4,7 @@ const express = require('express')
 const Project = require('./models/Project')
 
 const app = express()
+app.use(express.static('dist'))
 
 app.get('/', (request, response) => {
   Project.find({}).then(projects => {
