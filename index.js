@@ -7,7 +7,7 @@ const app = express()
 app.use(express.static('public'))
 
 app.get('/', (request, response) => {
- 
+   response.send('<h1>Hello World!</h1>')
 })
 
 app.get('/api/projects', (request, response) => {
