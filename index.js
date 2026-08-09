@@ -4,7 +4,7 @@ const express = require('express')
 const Project = require('./models/Project')
 
 const app = express()
-// app.use(express.static('dist'))
+app.use(express.static('public'))
 
 app.get('/', (request, response) => {
  
