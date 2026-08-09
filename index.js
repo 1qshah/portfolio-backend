@@ -6,7 +6,7 @@ const Project = require('./models/Project')
 const app = express()
 
 app.get('/', (request, response) => {
-  response.sendFile('/public/index.html')
+  response.sendFile(path.join(process.cwd(), "public", "index.html"))
 })
 
 app.get('/api/projects', (request, response) => {
