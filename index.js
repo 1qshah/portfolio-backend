@@ -6,6 +6,10 @@ const Project = require('./models/Project')
 const app = express()
 
 app.get('/api/projects', (request, response) => {
+  res.sendFile('/public/index.html')
+})
+
+app.get('/api/projects', (request, response) => {
   Project.find({}).then(projects => {
     response.json(projects)
   })
