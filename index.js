@@ -1,28 +1,5 @@
-require('dotenv').config()
-const express = require('express')
+const app = require('./app') // the actual Express application
 
-
-const path = require('path');
-
-const Project = require('./models/Project')
-
-const app = express()
-
-app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, 'public', 'index.html'))
-})
-
-app.get('/api/projects', (request, response) => {
-  Project.find({}).then(projects => {
-    response.json(projects)
-  })
-})
-
-app.get('/api/projects/:id', (request, response) => {
-  Project.findById(request.params.id).then(project => {
-    response.json(project)
-  })
-})
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {
