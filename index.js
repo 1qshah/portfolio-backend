@@ -1,4 +1,4 @@
-const app = require('./app') // the actual Express application
+const app = require('./app')
 
 
 const PORT = process.env.PORT
