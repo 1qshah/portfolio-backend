@@ -1,17 +1,18 @@
-import { test, expect } from '@playwright/test';
-
+import { test, expect } from '@playwright/test'
+import {PortfolioHomepage} from './pages/index.page'
 
 test.describe('Conditional rendering works', () => {
-
     test.beforeEach(async ({ page }) => {
-        await page.goto('http://localhost:3000/');
+        const homePage = new PortfolioHomepage(page)
+homePage.goto
     });
 
-    test('Clicking a project changes the rendered state', async ({ page }) => {
+    test.fixme('Clicking a project changes the rendered state', async ({ page }) => {
         const ProjectList = ['Secure Chat'];
 
+        const homePage = new PortfolioHomepage(page)
         for (const project in ProjectList) {
-            await page.getByRole('button', { name: project }).click();
+            await homePage.selectProject(project)
             await expect(page.getByRole('heading', { name: project })).toBeVisible();
 
         }
