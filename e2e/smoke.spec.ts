@@ -1,9 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { PortfolioHomepage } from './pages/index.page'
 
 
 test.describe('Home page works', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/');
+    const homePage = new PortfolioHomepage(page)
+    homePage.goto()
   });
 
   test('Default page loads', async ({ page }) => {
