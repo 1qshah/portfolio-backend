@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "node --test tests/project_api.test.js",
+    "test": "npx playwright test --project=firefox",
     "dev": "node --watch index.js"
   },
   "dependencies": {
