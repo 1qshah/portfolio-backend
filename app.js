@@ -17,7 +17,7 @@ app.get('/api/projects', async (request, response) => {
     const projects = await Project.find({})
     response.json(projects)
   } catch (error) {
-    return res.status(400).json({ message: 'Unable to retrieve data' });
+    return response.status(400).json({ message: 'Unable to retrieve data' });
   }
 })
 
@@ -30,7 +30,7 @@ app.get('/api/projects/:id', async (request, response) => {
 
     response.json(project)
   } catch (error) {
-    return res.status(400).json({ message: 'Unable to retrieve data' });
+    return response.status(400).json({ message: 'Unable to retrieve data' });
   }
 })
 
